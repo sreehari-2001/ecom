@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <style>
+        .cart {
+            
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+        }
+        .cart img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <div class="carts">
+        {% for item in cart_items %}
+            <div class="cart">
+                <img src="{{ item.product.img }}">
+                <h2>{{ item.product.name }}</h2>
+                <p>Price: ₹{{ item.product.price }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+                <p>Subtotal: ${{ item.subtotal }}</p>  
+                
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
